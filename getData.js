@@ -21,6 +21,7 @@ function getData() {
             if (low){
                 if (price1>low*toBuy){
                     state = 'BTC'; balance = balance / price1;
+                    console.log(iter,'switched from USD to BTC');
                     //console.log('  state from USD to BTC, low->null; state, oldlow, balance', state, low, balance, (balance * price2).toFixed(4));
                     low = null;
                 }
@@ -39,6 +40,7 @@ function getData() {
         //console.log('state=',state,'high=',high);
         if (high){
             if (price2<high*toSell){
+                console.log(iter, 'switched from BTC to USD');
                 //console.log('  state=BTC, high!=null, price2<high*toSell; state, newstate, price2, high, toSell, high*toSell', state, 'USD', price2, high, toSell, high * toSell);
                 state = 'USD'; balance = balance * price2;
                 high = null;
