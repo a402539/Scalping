@@ -1,6 +1,6 @@
 state = null; // BTC // USD
 high = null; low = null; toBuy = 1.001; toSell = 1/1.001;
-balance = 100; delay=1000; iters = 1200;
+balance = 100; delay=1000; iters = 1800;
 iter = 0; laststate = null;
 function getData() {
     iter += 1;
