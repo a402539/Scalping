@@ -48,7 +48,7 @@ function getData() {
         }
     else if (state == 'USD') {
             if (low){
-                if (deltaproc > toBuy){ //(price1>low*toBuy){
+                if (100*(deal/low-1) > toBuy){ //(price1>low*toBuy){
                     state = 'BTC'; balance = balance / price1;
                     console.log(iter,'SWITCHed from USD to BTC, balance=', (balance*price2).toFixed(4));
                     //console.log('  state from USD to BTC, low->null; state, oldlow, balance', state, low, balance, (balance * price2).toFixed(4));
@@ -68,7 +68,7 @@ function getData() {
     else {
         //console.log('state=',state,'high=',high);
         if (high){
-            if (deltaproc < toSell){ //(price2<high*toSell){
+            if (100*(deal/high-1) < toSell){ //(price2<high*toSell){
                 state = 'USD'; balance = balance * price2;
                 console.log(iter, 'SWITCHed from BTC to USD, balance=', balance.toFixed(4));
                 //console.log('  state=BTC, high!=null, price2<high*toSell; state, newstate, price2, high, toSell, high*toSell', state, 'USD', price2, high, toSell, high * toSell);
